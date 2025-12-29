@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "explosivemining",
+  "version": "1.0-SNAPSHOT",
+  "name": "ExplosiveMining",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/explosivemining/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "io.github.gummiangler.explosivemining.client.ExplosiveMiningDataGenerator"
+    ],
+    "client": [
+      "io.github.gummiangler.explosivemining.client.ExplosiveMiningClient"
+    ],
+    "main": [
+      "io.github.gummiangler.explosivemining.ExplosiveMining"
+    ]
+  },
+  "mixins": [
+    "explosivemining.mixins.json",
+    {
+      "config": "explosivemining.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "1.21.11"
+  }
+}
